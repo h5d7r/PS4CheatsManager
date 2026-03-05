@@ -1,5 +1,4 @@
-/* 
-	Cheats Manager PS4 main.c
+/* Cheats Manager PS4 main.c
 */
 
 #include <stdio.h>
@@ -181,12 +180,12 @@ static int LoadTextures_Menu(void)
 	if(!texture_mem || !menu_textures)
 		return 0; // fail!
 	
-ResetFont();
+	ResetFont();
 	free_mem = (u32 *) AddFontFromBitmapArray((u8 *) console_font_16x32, (u8 *) texture_mem, 0, 0xFF, 16, 32, 1, BIT7_FIRST_PIXEL);
 	
 	if (TTFLoadFont(0, "/preinst/common/font/DFHEI5-SONY.ttf", NULL, 0) != SUCCESS ||
 		TTFLoadFont(1, "/system_ex/app/NPXS20113/bdjstack/lib/fonts/SCE-PS3-RD-R-LATIN.TTF", NULL, 0) != SUCCESS ||
-		TTFLoadFont(2, "/path/to/Tajawal-Regular.ttf", NULL, 0) != SUCCESS)
+		TTFLoadFont(2, CHEATSMGR_APP_PATH "assets/fonts/Tajawal-Regular.ttf", NULL, 0) != SUCCESS)
 		return 0;
 
 	free_mem = (u32*) init_ttf_table((u8*) free_mem);
